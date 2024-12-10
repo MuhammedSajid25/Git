@@ -34,12 +34,10 @@ git diff					=	TO SHOW THE DIFFERENCE B/W EXISTING VERSION AND ADDED VERSION
 
 $ git rm --cached GIT_QUIZ_INFO.txt				=	TO UNSTAGE THE FILE CHANGES
 
-.
-
 
 ==========================================================================================
 
-
+LEARN HOW TO GET THE COMMITS IN GITHUB
 
 
 ==========================================================================================
