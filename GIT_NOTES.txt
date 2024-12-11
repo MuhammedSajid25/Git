@@ -42,7 +42,16 @@ LEARN HOW TO GET THE COMMITS IN GITHUB
 
 ==========================================================================================
 
+git branch -M main
 
+
+git remote add origin https://github.com/MuhammedSajid25/Git.git
+
+
+git remote
+
+
+git push -u origin main
 
 
 ==========================================================================================
