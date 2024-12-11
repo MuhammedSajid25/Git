@@ -28,6 +28,10 @@ git add filename			=	TO ADD THE FILE
 
 ==========================================================================================
 
+git commit -am "Commit message"		=	TO COMMIT THE CHANGES WITH THE COMMIT MESSAGE
+
+==========================================================================================
+
 git diff					=	TO SHOW THE DIFFERENCE B/W EXISTING VERSION AND ADDED VERSION
 
 ==========================================================================================
@@ -42,26 +46,30 @@ LEARN HOW TO GET THE COMMITS IN GITHUB
 
 ==========================================================================================
 
-git branch -M main
+git branch -M main																	=		MAY BE TO DEFINE THE EXISTING BRANCH AS MAIN
 
 
-git remote add origin https://github.com/MuhammedSajid25/Git.git
+git remote add origin https://github.com/MuhammedSajid25/Practice-Repo.git			=		TO ADD THE REMOTE REPOSITORY AND THE NAME OF REPOSITORY
 
 
-git remote
+git remote																			=		TO SEE THE LIST OF  REMOTE REPOSITORY
 
 
 git push -u origin main
 
 
+git push origin main																=		TO PUSH OUR CHANGES TO THE REMOTE REPO ORIGIN FROM THE MAIN BRANCH
+
+
 ==========================================================================================
 
+git clone https://github.com/MuhammedSajid25/Practice-Repo.git						=		TO DOWNLOAD THE REMOTE REPOSITORY TO OUR LOCAL BY CLONING
 
 
 
 ==========================================================================================
 
-
+git pull origin main																=		TO FETCH THE CHANGES FROM REMOTE REPO TO OUR LOCAL REPO
 
 
 ==========================================================================================
