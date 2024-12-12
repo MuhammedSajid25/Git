@@ -30,6 +30,8 @@ git add filename			=	TO ADD THE FILE
 
 git commit -am "Commit message"		=	TO COMMIT THE CHANGES WITH THE COMMIT MESSAGE
 
+git commit --amend					=	TO COMMIT THE NEW CHANGES TO THE ALREADY EXISTING LAST COMMIT
+
 ==========================================================================================
 
 git diff					=	TO SHOW THE DIFFERENCE B/W EXISTING VERSION AND ADDED VERSION
@@ -78,15 +80,36 @@ git pull 																			=		TO FETCH AND MERGE THE CHANGES FROM REMOTE REPO O
 
 git stash																			=		TO SAVE WITHOUT COMMIT
 
+git stash -- index.js																=		TO ADD INDEX.JS ONLY TO STASH
+
 git stash list																		=		LISTING ALL THE STASHES
 
-git stash pop																		=		REMOVE THE LATEST STAGE FROM THE STAGE LIST
+git stash pop																		=		REMOVE THE LATEST STASH FROM THE STASH LIST AND APPLY THEM IMMEDIATELY
 
-git stash apply																		=		RETRIEVE STASHED CHANGES
+git stash apply																		=		RETRIEVE LAST STASHED CHANGES
 
 git stash apply stash@{0}															=		APPLY SPECIFIC STASH BY INDEX
 
 git stash drop stash@{0}															=		REMOVING SPECIFIC STASHS
+
+git stash drop																		=		REMOVED LAST STASHED CHANGES
+
+git stash clear																		=		REMOVES ALL STASHES
+
+git stash save "newname"															=		TO ADD STASH TO THE TRACKED FILE WITH SPECIFIC NAME
+
+git stash save "newname" --include-untracked										=		TO ADD SPECIFIC NAME TO STASH FOR UNTRACKED FILES
+
+
+
+STASHING CAN ONLY BE DONE FOR TRACKING FILES I.E., ADDED FILES THROUGH GIT COMMAND GIT ADD .
+
+
+git stash --include-untracked														=		MANUAL COMMAND TO ADD ALL THE UNTRACKED FILES TO STASH
+
+git stash --include-untracked -- index.js											=		ADDS ONLY INDEX.JS TO STASH OUT OF ALL UNTRACKED FILES 
+
+git stash --all																		=		ADDS ALL TO THE STASH
 
 ==========================================================================================
 
@@ -165,6 +188,13 @@ git log <branch_name>										=		DISPLAY COMMITS FOR A SPECIFIC BRANCH
 
 git log --author="<author_name"								=		DISPLAY COMMITS BY AUTHOR
 
+
+
+git log --graph
+
+
+git log --all --decorate --oneline --graph 
+
 ==========================================================================================
 
 The git diff is a Git command that allows us to compare the differences between various parts of your Git
@@ -221,6 +251,11 @@ git tag -a <tag-name> "tag_mesaage"						=		ANNOTATION TAGS WITH MESSAGE
 
 git tag -d <tag_name>									=		DELETING TAG
 
+
+
+git show-ref --tags										=		LIST OF TAGS
+
+git show tagname										=		DISPLAY TAG INFO
 
 ==========================================================================================
 
@@ -417,21 +452,37 @@ NEED TO WATCH GIT PART4
 
 ==========================================================================================
 
+BRANCH IS JUST A SINGLE POINTER TO A COMMIT
+
+
+WHEN YOU MAKE A NEW COMMIT, BRANCH POINTER MOVES TO THE NEW COMMIT
+
+
+Branch: A separate line of development within the repository.
+
+==========================================================================================
+
+HEAD:
+
+-	IT TELLS YOU WHAT BRANCH YOU'RE WORKING ON AND WHAT'S THE CURRENT COMMIT IS
+
+-	IT ALSO ACTS AS POINTER TO BRANCH
 
 
 ==========================================================================================
 
+VS CODE EXTENSIONS TO INSTALL:
 
+
+-> GITLENS-GIT SUPERCHARGED
 
 
 ==========================================================================================
 
+TAG IS ALSO A POINTER TO A PARTICULAR COMMIT
 
 
-
-==========================================================================================
-
-
+TAG DOESNT CHANGE TO ANOTHER COMMIT
 
 
 

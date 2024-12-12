@@ -1,0 +1,136 @@
+Lesson : Git
+
+
+Introduction to Version Control System:
+
+A Version Control System (VCS) is a tool that helps manage changes to source code over time.
+It keeps track of every modification made to the code, allowing multiple people to collaborate on a project.
+VCS ensures that changes can be tracked, reviewed, and, if necessary, rolled back.
+
+
+Need of VCS:
+
+Collaboration: Enables multiple developers to work on the same project simultaneously without conflicts.
+History Tracking: Keeps a record of all changes, who made them, and when they were made.
+Backup and Restore: Facilitates recovery of previous versions if something goes wrong.
+Branching and Merging: Allows developers to work on new features or fixes in isolated branches and merge them when ready.
+
+
+Working of VCS:
+
+Repository: Central storage for all files and their history.
+Commit: Saving changes to the VCS with a message describing what was done.
+Branch: A separate line of development within the repository.
+Merge: Combining changes from different branches.
+
+
+Introduction to Git:
+
+Git is a popular distributed VCS created by Linus Torvalds.
+Unlike centralized VCS, Git allows every user to have a complete local copy of the repository.
+It’s widely used for both open source and commercial software development.
+
+
+How to Install Git?
+
+Windows: Download from Git for Windows, then follow the installation instructions.
+Mac: Use Homebrew (brew install git) or download from the official Git website.
+Linux: Install via package manager, e.g., sudo apt-get install git for Debian-based distributions or sudo yum install git for Red Hat-based distributions.
+
+
+Why to Use Git?
+
+Speed: Git is designed to handle everything from small to very large projects with speed and efficiency.
+Distributed Nature: Every developer has the full history of their repository locally.
+Flexibility: Supports various workflows (centralized, feature branching, etc.).
+Community Support: Extensive support from a large community and a wealth of resources available.
+
+
+Alternatives of Git:
+
+Subversion (SVN): A centralized VCS.
+Mercurial: A distributed VCS similar to Git but known for its simplicity.
+Bazaar: Another distributed VCS with a focus on ease of use.
+Perforce Helix Core: A centralized VCS with robust enterprise-grade features.
+ 
+
+git init:
+
+Initializes a new Git repository in the current directory.
+Creates a hidden .git directory to store all the repository data.
+
+
+git status:
+
+Shows the current state of the working directory and the staging area.
+Displays which changes have been staged, which haven't, and files that aren't being tracked by Git.
+
+
+git add:
+
+Adds changes in the working directory to the staging area.
+Example: git add filename or git add . to stage all changes.
+
+
+git commit & commit message convention:
+
+Records the changes in the staging area to the repository.
+Example: git commit -m "Commit message".
+Commit messages should be descriptive
+
+
+git pull:
+
+Fetches and integrates changes from a remote repository into the current branch.
+Combines git fetch and git merge into one command.
+
+
+git clone:
+
+Creates a copy of an existing repository in a new directory.
+Example: git clone https://github.com/user/repo.git.
+
+
+git push:
+
+Uploads local commits to a remote repository.
+Example: git push origin branch-name.
+
+
+git checkout:
+
+Switches branches or restores working directory files.
+Example: git checkout branch-name or git checkout -- filename.
+
+
+git branch:
+
+Lists all branches or creates a new branch.
+Example: git branch to list, git branch new-branch to create.
+
+
+git reset:
+
+Undoes changes by moving the HEAD pointer and staging area.
+Example: git reset --hard to reset working directory and staging area to the last commit.
+
+
+git log:
+
+Shows the commit history of the current branch.
+Example: git log to view, git log --oneline for a compact view.
+
+
+git diff:
+
+Displays differences between commits, the working directory, and the staging area.
+Example: git diff to show changes not yet staged, git diff --staged for staged changes.
+
+
+git merge:
+
+Combines changes from one branch into another.
+Example: git merge branch-name to merge branch-name into the current branch.
+
+
+====================================================================================================================================================
