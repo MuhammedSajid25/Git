@@ -46,7 +46,7 @@ LEARN HOW TO GET THE COMMITS IN GITHUB
 
 ==========================================================================================
 
-git branch -M main																	=		MAY BE TO DEFINE THE EXISTING BRANCH AS MAIN
+git branch -M main																	=		TO RENAME THE EXISTING BRANCH AS MAIN
 
 
 git remote add origin https://github.com/MuhammedSajid25/Practice-Repo.git			=		TO ADD THE REMOTE REPOSITORY AND THE NAME OF REPOSITORY
@@ -69,7 +69,385 @@ git clone https://github.com/MuhammedSajid25/Practice-Repo.git						=		TO DOWNLO
 
 ==========================================================================================
 
-git pull origin main																=		TO FETCH THE CHANGES FROM REMOTE REPO TO OUR LOCAL REPO
+git pull origin main																=		TO FETCH AND MERGE THE CHANGES FROM SPECIFIC REMOTE REPO ORIGIN TO OUR SPECIFIC LOCAL REPO MAIN
+
+git pull 																			=		TO FETCH AND MERGE THE CHANGES FROM REMOTE REPO ORIGIN TO OUR CURRENT BRANCH
+
+
+==========================================================================================
+
+git stash																			=		TO SAVE WITHOUT COMMIT
+
+git stash list																		=		LISTING ALL THE STASHES
+
+git stash pop																		=		REMOVE THE LATEST STAGE FROM THE STAGE LIST
+
+git stash apply																		=		RETRIEVE STASHED CHANGES
+
+git stash apply stash@{0}															=		APPLY SPECIFIC STASH BY INDEX
+
+git stash drop stash@{0}															=		REMOVING SPECIFIC STASHS
+
+==========================================================================================
+
+git checkout branchname																=		TO SWICTH TO AN EXISTING BRANCH
+
+git checkout -b branchname															=		CREATE A NEW BRANCH AND SWITCHING TO IT
+
+git checkout <commit_hash> ^ -- .
+git commit -m "Revert to previous commit"											=		CREATE A NEW COMMIT THAT UNDO THE CHANGES FROM A SPECIFIC Commit
+
+git checkout <commit_hash>															=		TO EXAMINE THE STATE OF REPOSITORY AT SPECIFIC COMMIT
+
+git checkout --orphan branchname													=		CREATE A NEW ORPHAN BRANCH I.E., BRANCH WITH NO COMMIT HISTORY
+
+==========================================================================================
+
+git branch																			=		LIST ALL BRANCHES
+
+git branch branchname																=		CREATES A NEW BRANCH
+
+git checkout branchname																=		SWITCH BRANCH
+
+git branch -D branchname															=		DELETE BRANCH
+
+git branch -m new-name																=		RENAME BRANCH
+
+git branch -a																		=		LIST REMOTE BRANCHES
+
+
+
+
+==========================================================================================
+
+Common uses of git reset 
+
+=>	git reset -- soft <commit_hash>
+
+$ Undo the last commit (git reset -- soft <commit_hash>) - This soft reset moves the branch pointer to the previous
+commit, effectively “undoing” the last commit while keeping the changes staged for the next commi4
+
+=>	git reset --mixed <commit_hash>
+
+$ Unstage changes (git reset <commit_hash> or git reset --mixed <commit_hash>) - This mixed reset unstaged all changes, moving them from the staging area
+back to the working directory-
+
+=>	git reset --hard <commit_hash>
+
+$ Move the branch to a specific commit (git reset --hard <commit_hash>)- This hard reset moves the branch
+pointer to the specific commit, discarding all changes and effectively resetting the branch to that commit.
+
+
+==========================================================================================
+
+
+The git cherrypick is a Git command used to apply a specific commit from one branch to another. It allows us
+to pick a single commit and apply it to your current working branch.
+
+git cherry-pick <commit_hash>
+
+
+==========================================================================================
+
+The git log command in Git is used to display the commit history of a repository. It shows information about
+past commits, including hashes, authors, dates, and commit messages.
+
+
+git log														=		DISPLAY HISTORY COMMITS
+
+git log --oneline											=		DISPLAY COMPACT COMMIT HISTORY
+
+git log -p <commit_hash>									=		DISPLAY DETAILS FOR A SINGLE COMMIT
+
+git log -n <number_of_commmits>								=		DISPLAY THE LAST N COMMITS
+
+git log <branch_name>										=		DISPLAY COMMITS FOR A SPECIFIC BRANCH
+
+git log --author="<author_name"								=		DISPLAY COMMITS BY AUTHOR
+
+==========================================================================================
+
+The git diff is a Git command that allows us to compare the differences between various parts of your Git
+repository. It is a powerful tool for inspecting changes made to your code
+
+
+git diff													=		COMPARE WORKING DIRECTORY TO LAST COMMIT
+
+git diff --staged											=		COMPARE STAGED CHANGES TO LAST COMMIT
+
+git diff -p <commit_hash> <commit_hash1>					=		DISPLAY DETAILS FOR A SINGLE COMMIT
+
+git diff <commit1> <commit2>								=		COMPARE TWO COMMITS
+
+git diff <branch_name>										=		COMPARE CURRENT BRANCH TO ANOTHER BRANCH
+
+git diff <file_name>										=		COMPARE A SPECIFIC FILE
+
+
+
+==========================================================================================
+
+The git merge is a Git command that is used to integrate changes from one branch to another branch. This is
+typically used to combine the changes made in a features branch back into the main branch.
+
+
+git merge <branch_name>
+
+
+==========================================================================================
+
+The git rebase is a git command used to integrate changes from one branch into another by applying the
+changes from one branch on top of another. It's a way to combine the changes of one branch with another
+branch, usually to keep a cleaner and linear history.
+
+
+git rebase main_branch
+
+
+==========================================================================================
+
+The git tag is a git command used to create, list, delete, and manage tags. Tags are used to mark specific
+points in Git history, usually to denote important events like releases, milestones, or significant commits.
+Example -
+
+
+git tag <tagname>										=		CREATES A TAG
+
+git tag													=		LISTING TAG
+
+git tag -a <annotation_tag_name>						=		ANNOTATED TAGS
+
+git tag -a <tag-name> "tag_mesaage"						=		ANNOTATION TAGS WITH MESSAGE
+
+git tag -d <tag_name>									=		DELETING TAG
+
+
+==========================================================================================
+
+The git squash is not a standalone Git command, but it refers to a technique used to combine multiple Git
+commits into a single, more meaningful commit. This is typically done to maintain a cleaner and more
+organized Git history.
+
+
+git merge --squash <branch_name>
+
+
+==========================================================================================
+
+The git prune is a Git command used to remove objects from the Git object database that are no longer
+reachable and are no longer needed. It helps clean up the local Git repository by removing unreferenced and
+dangling objects (such as commits, trees, and blobs) that are no longer part of the Git history.
+
+
+git prune
+
+==========================================================================================
+
+The git reflog is a Git command that stands for "reference logs." It's a powerful tool that tracks changes to the
+Git references in your repository, such as branches and tags. The git reflog command allows you to view a
+history of all reference updates, helping you to recover lost commits, branches, or changes.
+
+
+git reflog												=		DISPLAY REFERNCE LOG
+
+git reflog <branchname>									=		SHOW REFERNCE LOG FOR SPECIFIC BRANCH	
+
+git reflog HEAD											=		DISPLAY REFERNCE LOG FOR HEAD OF CURRENT BRANCH
+
+
+==========================================================================================
+
+The git clean is a Git command used to remove untracked files from the working directory. These are files that
+are not under version control (i.e., not added to the Git repository) and are not included in the .gitignore file.
+Example -
+
+git clean -n											=		DRY RUN TO SEE WHAT WOULD BE REMOVED
+
+git clean -f											=		REMOVE UNTRACKED FILES
+
+git clean -fd											=		REMOVE UNTRACKED FILES AND DIRECTORIES
+
+
+==========================================================================================
+
+The git help is a Git command that is used to show you all the documentation shipped with Git about any
+command.
+Example
+
+git help commit											=		OPENS THE MAN PAGE OF GIT COMMIT COMMAND 
+
+git help -a												=		LIST ALL AVAILABLE GIT COMMANDS FOR WHICH YOU ACCESS HELP
+
+==========================================================================================
+
+The git blame is a Git command that annotates the lines of any file with which the commit was the last one to
+introduce a change to each line of the file and what person authored that commit. This is helpful in order to
+find the person to ask for more information about a specific section of your code.
+
+
+git blame <file>
+
+==========================================================================================
+
+The git revert command is used to create a new commit that undoes the changes made by a previous commit
+or a range of commits. It effectively applies the inverse of the specified commit(s) to the current branch,
+allowing you to ‘revert the changes without altering the commit history.
+
+
+git revert <commit_hash>								=		SINGLE COMMIT REVERT
+
+git revert <start_commit_hash>..<end_commit_hash>		=		RANGE OF COMMIT REVERT
+
+
+==========================================================================================
+
+The git remote is a git command used to manage connections to remote repositories. Git allows us to work
+
+with multiple remote repositories, and the git remote command helps us to manage and interact with them.
+Example of git remote
+
+
+git remote												=		LIST REMOTE REPOSITORIES
+
+git remote -v											=		LIST REMOTE REPOSITORIES WITH DETAILS
+
+git remote add <name> <url>								=		ADD NEW REMOTE REPOSITORY
+
+git remote remove <name>								=		REMOVE A REMOTE REPOSITORY
+
+git remote rename <old_name> <new_name>					=		RENAME A REMOTE REPOSITORY
+
+git remote show <name>									=		SHOW INFO ABOUT A REMOTE REPO
+
+
+==========================================================================================
+
+->	TO SEE THE TREE STRUCTURE OF GIVEN FOLDER
+
+tree .git
+
+->	TO SEE THE TREE STRUCTURE OF EXISTING FOLDER
+
+tree .
+
+==========================================================================================
+
+
+GIT USES CRYPTOGRAPHIC SHA1 FOR HASHING FUNCTION TO STORE AS KEY VALUE STORE
+
+
+GIT COMPRESSES THE DATA IN BLOB FORMAT			(		BIG LARGE BINARY OBJECT			)
+
+
+
+$ echo 'Hello git'
+Hello git
+
+$ echo 'Hello git' | git hash-object --stdin
+0dec2239efc0bbfabe4078f5357705ca93b5475e
+
+
+
+TO CREATE A FILE
+
+$ echo 'Hello git' | git hash-object -w --stdin
+0dec2239efc0bbfabe4078f5357705ca93b5475e
+
+
+
+TO SEE THE COMMITTED CHANGES WHICH ARE STORED IN .GIT/OBJECTS WITH FIRST 2 CHARACTERS AS FOLDER AND REMAINING 38 CHAR AS FILE IN BLOB FORMAT TO NORMAL FORMAT
+
+git cat-file -p f8dfa18a6f3520e4da0a2a733f6b3cd90635a422
+==========================================================================================
+
+TO MANAGE DIRECTORIES, GIT USES TREE
+
+
+TO SHOW THE TYPE, WE CAN USE -t
+
+git cat-file -t f8dfa18a6f3520e4da0a2a733f6b3cd90635a422
+blob
+
+
+==========================================================================================
+
+WHEN YOU COMMIT THE CHANGES, YOU CAN ALSO SEE THE TREE OBJECTS IN .GIT/OBJEECTS
+
+
+git cat-file -t h8dfa18a6f3520e4da0a2a733f6b3cd90635a429
+tree
+
+==========================================================================================
+
+
+
+git cat-file -t p8dfa18a6f3520e4da0a2a733f6b3cd90635a476
+commit
+
+
+
+git cat-file -p p8dfa18a6f3520e4da0a2a733f6b3cd90635a476
+tree details
+author details
+commit details
+file details
+
+==========================================================================================
+
+FOR THE SAME PIECE OF DATA IN MULTIPLE FILES, ONLY ONE HASH IS CREATED I.E., ONLY ONE OBJECT IS CREATED
+
+==========================================================================================
+
+git gc			=		FOR MANUAL GARBAGE COLLECTION
+
+
+WHEN YOU MANUALLY DO THE GARBAGE COLLECTION,
+
+.pack and .idx files are created
+
+
+
+TO SEE THOSE PACKS
+
+git verify-pack -v .git/objects/pack/pack_name
+
+==========================================================================================
+
+NEED TO WATCH GIT PART4
+
+==========================================================================================
+
+
+
+==========================================================================================
+
+
+
+
+==========================================================================================
+
+
+
+
+==========================================================================================
+
+
+
+
+
+==========================================================================================
+
+
+
+
+
+==========================================================================================
+
+
+==========================================================================================
+
+
+==========================================================================================
 
 
 ==========================================================================================
@@ -91,6 +469,26 @@ git pull origin main																=		TO FETCH THE CHANGES FROM REMOTE REPO TO 
 
 
 
+
+==========================================================================================
+
+
+
+
+
+==========================================================================================
+
+
+==========================================================================================
+
+
+==========================================================================================
+
+
+==========================================================================================
+
+
+
 ==========================================================================================
 
 
@@ -100,6 +498,28 @@ git pull origin main																=		TO FETCH THE CHANGES FROM REMOTE REPO TO 
 
 
 
+
+==========================================================================================
+
+
+
+
+
+==========================================================================================
+
+
+
+
+
+==========================================================================================
+
+
+==========================================================================================
+
+
+==========================================================================================
+
+
 ==========================================================================================
 
 
@@ -116,15 +536,6 @@ git pull origin main																=		TO FETCH THE CHANGES FROM REMOTE REPO TO 
 
 ==========================================================================================
 
-
-
-
-==========================================================================================
-
-
-
-
-==========================================================================================
 
 
 
