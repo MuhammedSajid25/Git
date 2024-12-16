@@ -488,7 +488,12 @@ TAG DOESNT CHANGE TO ANOTHER COMMIT
 
 ==========================================================================================
 
+GIT IGNORE:
 
+git status --ignored
+
+
+git check-ignore -v <file>
 
 
 
